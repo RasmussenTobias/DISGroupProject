@@ -16,3 +16,9 @@ bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
+
+accessType = ["basic","standard","premium"]
+mysession = {"state" : "initializing","accessType" : "Not assingned", "id": 0 ,"age" : 202212}
+
+from arbitrageBettingSite.Login.routes import Login
+app.register_blueprint(Login)
