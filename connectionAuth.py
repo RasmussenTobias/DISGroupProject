@@ -6,4 +6,3 @@ conn = psycopg2.connect(
     user="samuelcadell",
     password="dis123"
 )
-cur = conn.cursor()

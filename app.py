@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template,redirect,url_for
 from connectionAuth import conn
+import psycopg2
 cur = conn.cursor()
 app = Flask(__name__)
 
@@ -21,7 +22,7 @@ def updateOrReject():
    else:
       cur.execute("insert into users values(%s,%s)",(username,password))
       conn.commit()
-      return "valid"
+      return render_template("ligaPrev.html")
    
 @app.route('/', methods=['GET'])
 def login():
@@ -35,10 +36,25 @@ def welcome():
     cur.execute("select * from users where username=%s and password=%s",(username,password))
     loginResult = cur.fetchone()
     if loginResult:
-       return "welcome"
+       return render_template("ligaPrev.html")
     else:
        return redirect(url_for("createUser"))
+    
+
+#preview
+    
+@app.route("/ligaPreview",methods=["POST"])
+def showMatches():
+   liga = request.form['button']
+   cur.execute("select distinct(year) from season where ligaName=%s",(liga,))
+   seasonsForLiga = cur.fetchall()
+   description = [f"Season 20{x}" for x in seasonsForLiga]
+   description = [x.replace("('","").replace("',)","") for x in description]
+   
+   return render_template("seasons.html",num_buttons=len(seasonsForLiga),button_desc=description,liga=liga)
 
 if __name__ == '__main__':
     app.debug = True
     app.run()
+    cur.close()
+    conn.close()
