@@ -40,7 +40,9 @@ def welcome():
     else:
        return redirect(url_for("createUser"))
     
-
+@app.route('/register')
+def register():
+    return render_template('createUser.html')
 #preview
     
 @app.route("/ligaPreview",methods=["POST"])
