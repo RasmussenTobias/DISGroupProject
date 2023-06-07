@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Alert Example</title>
+    <script>
+      function redirectToAnotherPage() {
+        window.location.href = "{{ redirect_url }}";
+      }
+      alert("{{ alert_message }}");
+      redirectToAnotherPage();
+    </script>
+  </head>
+  <body></body>
+</html>
