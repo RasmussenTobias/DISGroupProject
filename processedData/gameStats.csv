@@ -6659,7 +6659,6 @@
 6657,27/04/13,Shrewsbury_Portsmouth,3.0,2.0,None,None,10.0,9.0,7.0,6.0,None,None,4.0,5.0,7.0,8.0,None,None,None,None,1.0,None,None,None
 6658,27/04/13,Stevenage_Milton Keynes Dons,None,2.0,None,None,10.0,14.0,3.0,6.0,None,None,4.0,6.0,8.0,11.0,None,None,None,None,None,2.0,None,None
 6659,27/04/13,Tranmere_Bournemouth,None,None,None,None,5.0,13.0,1.0,7.0,None,None,5.0,7.0,6.0,4.0,None,None,None,None,None,1.0,None,None
-6660,,nan_nan,,,None,None,,,,,None,None,,,,,None,None,None,None,,,,
 6661,18/08/12,AFC Wimbledon_Chesterfield,1.0,None,None,None,6.0,16.0,4.0,11.0,None,None,3.0,8.0,8.0,12.0,None,None,None,None,1.0,2.0,None,None
 6662,18/08/12,Bristol Rvs_Oxford,None,2.0,None,None,13.0,9.0,6.0,5.0,None,None,8.0,2.0,11.0,15.0,None,None,None,None,1.0,3.0,None,None
 6663,18/08/12,Cheltenham_Dag and Red,2.0,None,None,None,8.0,9.0,3.0,5.0,None,None,3.0,7.0,4.0,5.0,None,None,None,None,1.0,2.0,None,None
@@ -7212,8 +7211,6 @@
 7210,27/04/13,Southend_Morecambe,None,1.0,None,None,12.0,7.0,5.0,3.0,None,None,7.0,3.0,14.0,8.0,None,None,None,None,1.0,None,None,None
 7211,27/04/13,Torquay_Bristol Rvs,3.0,3.0,None,None,13.0,12.0,7.0,4.0,None,None,7.0,4.0,7.0,12.0,None,None,None,None,2.0,3.0,None,None
 7212,27/04/13,Wycombe_Port Vale,1.0,1.0,None,None,8.0,6.0,3.0,4.0,None,None,7.0,9.0,5.0,7.0,None,None,None,None,None,1.0,None,None
-7213,,nan_nan,,,None,None,,,,,None,None,,,,,None,None,None,None,,,,
-7214,,nan_nan,,,None,None,,,,,None,None,,,,,None,None,None,None,,,,
 7215,10/08/12,Hereford_Macclesfield,2,1,None,None,12,8,6,1,None,None,4,3,10,7,None,None,None,None,2,1,None,None
 7216,11/08/12,Barrow_Telford United,None,None,None,None,10,7,4,1,None,None,7,3,11,11,None,None,None,None,None,1,None,None
 7217,11/08/12,Braintree Town_Hyde United,2,2,None,None,5,6,3,2,None,None,11,None,12,10,None,None,None,None,1,2,None,1
@@ -10354,9 +10351,6 @@
 10352,26/04/14,Nuneaton Town_Dartford,3.0,1.0,None,None,19.0,7.0,10.0,5.0,None,None,11.0,8.0,5.0,4.0,None,None,None,None,None,None,None,None
 10353,26/04/14,Tamworth_Woking,2.0,4.0,None,None,17.0,13.0,10.0,8.0,None,None,5.0,3.0,7.0,17.0,None,None,None,None,None,2.0,None,None
 10354,26/04/14,Welling United_Southport,4.0,3.0,None,None,13.0,12.0,9.0,8.0,None,None,6.0,2.0,12.0,14.0,None,None,None,None,4.0,2.0,None,1.0
-10355,,nan_nan,,,None,None,,,,,None,None,,,,,None,None,None,None,,,,
-10356,,nan_nan,,,None,None,,,,,None,None,,,,,None,None,None,None,,,,
-10357,,nan_nan,,,None,None,,,,,None,None,,,,,None,None,None,None,,,,
 10358,16/08/14,Arsenal_Crystal Palace,2.0,1.0,None,None,14.0,4.0,6.0,2.0,None,None,9.0,3.0,13.0,19.0,None,None,None,None,2.0,2.0,None,1.0
 10359,16/08/14,Leicester_Everton,2.0,2.0,None,None,11.0,13.0,3.0,3.0,None,None,3.0,6.0,16.0,10.0,None,None,None,None,1.0,1.0,None,None
 10360,16/08/14,Man United_Swansea,1.0,2.0,None,None,14.0,5.0,5.0,4.0,None,None,4.0,None,14.0,20.0,None,None,None,None,2.0,4.0,None,None
@@ -10737,7 +10731,6 @@
 10735,24/05/15,Man City_Southampton,2.0,None,None,None,15.0,13.0,6.0,4.0,None,None,8.0,4.0,13.0,8.0,None,None,None,None,1.0,1.0,None,None
 10736,24/05/15,Newcastle_West Ham,2.0,None,None,None,17.0,4.0,4.0,1.0,None,None,2.0,3.0,9.0,9.0,None,None,None,None,2.0,1.0,None,None
 10737,24/05/15,Stoke_Liverpool,6.0,1.0,None,None,15.0,13.0,9.0,4.0,None,None,3.0,9.0,13.0,4.0,None,None,None,None,4.0,2.0,None,None
-10738,,nan_nan,,,None,None,,,,,None,None,,,,,None,None,None,None,,,,
 10739,08/08/14,Blackburn_Cardiff,1.0,1.0,None,None,12.0,6.0,3.0,3.0,None,None,4.0,5.0,6.0,14.0,None,None,None,None,1.0,3.0,None,None
 10740,09/08/14,Brentford_Charlton,1.0,1.0,None,None,14.0,13.0,4.0,4.0,None,None,11.0,5.0,3.0,13.0,None,None,None,None,1.0,1.0,None,None
 10741,09/08/14,Brighton_Sheffield Weds,None,1.0,None,None,11.0,5.0,3.0,1.0,None,None,4.0,4.0,13.0,13.0,None,None,None,None,3.0,1.0,1.0,None
@@ -11290,7 +11283,6 @@
 11288,02/05/15,Nott'm Forest_Cardiff,1.0,2.0,None,None,13.0,9.0,3.0,3.0,None,None,4.0,4.0,13.0,11.0,None,None,None,None,4.0,2.0,None,1.0
 11289,02/05/15,Watford_Sheffield Weds,1.0,1.0,None,None,18.0,3.0,6.0,1.0,None,None,5.0,None,8.0,8.0,None,None,None,None,None,1.0,None,None
 11290,02/05/15,Wolves_Millwall,4.0,2.0,None,None,20.0,18.0,11.0,5.0,None,None,8.0,6.0,6.0,9.0,None,None,None,None,None,2.0,None,None
-11291,,nan_nan,,,None,None,,,,,None,None,,,,,None,None,None,None,,,,
 11292,09/08/14,Barnsley_Crawley Town,None,1,None,None,13,12,7,5,None,None,3,3,15,20,None,None,None,None,1,4,1,None
 11293,09/08/14,Bradford_Coventry,3,2,None,None,11,8,6,4,None,None,4,6,16,10,None,None,None,None,2,3,None,None
 11294,09/08/14,Colchester_Oldham,2,2,None,None,13,10,5,3,None,None,8,4,6,5,None,None,None,None,None,None,None,None
@@ -12947,13 +12939,6 @@
 12945,25/04/15,Torquay_Macclesfield,1.0,1.0,None,None,9.0,14.0,4.0,4.0,None,None,7.0,6.0,13.0,8.0,None,None,None,None,None,None,None,None
 12946,25/04/15,Welling United_Southport,None,1.0,None,None,10.0,11.0,3.0,7.0,None,None,8.0,5.0,13.0,12.0,None,None,None,None,None,2.0,None,None
 12947,25/04/15,Woking_Halifax,3.0,2.0,None,None,11.0,9.0,6.0,4.0,None,None,9.0,4.0,10.0,6.0,None,None,None,None,2.0,3.0,1.0,None
-12948,,nan_nan,,,None,None,,,,,None,None,,,,,None,None,None,None,,,,
-12949,,nan_nan,,,None,None,,,,,None,None,,,,,None,None,None,None,,,,
-12950,,nan_nan,,,None,None,,,,,None,None,,,,,None,None,None,None,,,,
-12951,,nan_nan,,,None,None,,,,,None,None,,,,,None,None,None,None,,,,
-12952,,nan_nan,,,None,None,,,,,None,None,,,,,None,None,None,None,,,,
-12953,,nan_nan,,,None,None,,,,,None,None,,,,,None,None,None,None,,,,
-12954,,nan_nan,,,None,None,,,,,None,None,,,,,None,None,None,None,,,,
 12955,08/08/2015,Bournemouth_Aston Villa,None,1,None,None,11,7,2,3,None,None,6,3,13,13,None,None,None,None,3,4,None,None
 12956,08/08/2015,Chelsea_Swansea,2,2,None,None,11,18,3,10,None,None,4,8,15,16,None,None,None,None,1,3,1,None
 12957,08/08/2015,Everton_Watford,2,2,None,None,10,11,5,5,None,None,8,2,7,13,None,None,None,None,1,2,None,None
@@ -14438,7 +14423,6 @@
 14436,08/05/16,Sheffield United_Scunthorpe,None,2.0,None,None,12.0,6.0,2.0,4.0,None,None,9.0,4.0,11.0,6.0,None,None,None,None,1.0,None,None,None
 14437,08/05/16,Swindon_Shrewsbury,3.0,None,None,None,11.0,8.0,4.0,2.0,None,None,8.0,3.0,7.0,16.0,None,None,None,None,None,3.0,None,None
 14438,08/05/16,Wigan_Barnsley,1.0,4.0,None,None,8.0,10.0,4.0,7.0,None,None,4.0,3.0,11.0,6.0,None,None,None,None,1.0,1.0,1.0,None
-14439,,nan_nan,,,None,None,,,,,None,None,,,,,None,None,None,None,,,,
 14440,08/08/15,Accrington_Luton,1.0,1.0,None,None,12.0,10.0,4.0,4.0,None,None,3.0,4.0,12.0,15.0,None,None,None,None,1.0,None,None,None
 14441,08/08/15,AFC Wimbledon_Plymouth,None,2.0,None,None,14.0,11.0,3.0,6.0,None,None,11.0,5.0,9.0,7.0,None,None,None,None,1.0,None,None,None
 14442,08/08/15,Bristol Rvs_Northampton,None,1.0,None,None,2.0,11.0,2.0,3.0,None,None,1.0,9.0,11.0,8.0,None,None,None,None,1.0,1.0,None,None
@@ -14991,7 +14975,6 @@
 14989,07/05/16,Plymouth_Hartlepool,5.0,None,None,None,17.0,11.0,7.0,6.0,None,None,4.0,5.0,11.0,8.0,None,None,None,None,None,None,None,None
 14990,07/05/16,Portsmouth_Northampton,1.0,2.0,None,None,8.0,7.0,5.0,4.0,None,None,None,6.0,15.0,11.0,None,None,None,None,3.0,1.0,1.0,None
 14991,07/05/16,Yeovil_Leyton Orient,None,1.0,None,None,12.0,5.0,6.0,2.0,None,None,8.0,1.0,9.0,14.0,None,None,None,None,None,None,None,None
-14992,,nan_nan,,,None,None,,,,,None,None,,,,,None,None,None,None,,,,
 14993,08/08/15,Aldershot_Gateshead,1,2,None,None,4,5,2,3,None,None,4,3,10,5,None,None,None,None,None,1,None,None
 14994,08/08/15,Altrincham_Forest Green,None,1,None,None,5,9,2,1,None,None,2,13,13,13,None,None,None,None,2,2,None,None
 14995,08/08/15,Barrow_Dover Athletic,2,1,None,None,13,18,5,5,None,None,2,6,11,10,None,None,None,None,None,2,None,None

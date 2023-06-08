@@ -2,13 +2,14 @@
 <html>
   <head>
     <title>{{liga}}</title>
+    <link rel="stylesheet" href="/static/seasonsStyle.css">
   </head>
   <body>
     <h1>Seasons</h1>
 
-    <form action="/matches" method="post">
+    <form action="/matches" method="post" class="button-menu">
       {% for i in range(num_buttons) %}
-      <button name="button" type="submit" ,value="{{button_desc[i]}}">
+      <button name="button" type="submit" value="{{button_desc[i]}}">
         {{button_desc[i]}}
       </button>
       {% endfor %}

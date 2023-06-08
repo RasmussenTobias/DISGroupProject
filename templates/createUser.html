@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Login</title>
+    <title>Register</title>
+    <link rel="stylesheet" href="/static/createUserStyle.css">
   </head>
   <body>
-    <form method="POST" action="/checkUser">
-      <label for="username">Write your new username:</label>
-      <input type="text" id="username" name="username" /><br /><br />
-      <label for="password">Write your new password:</label>
-      <input type="password" id="password" name="password" /><br /><br />
-      <input type="submit" value="Submit" />
-    </form>
+    <div class="container">
+      <form class="register-form" method="POST" action="/checkUser">
+        <h1>Register</h1>
+        <label for="username">Write your new username:</label>
+        <input type="text" id="username" name="username" /><br /><br />
+        <label for="password">Write your new password:</label>
+        <input type="password" id="password" name="password" /><br /><br />
+        <input type="submit" class="submit-button" value="Submit" />
+      </form>
+    </div>
   </body>
 </html>

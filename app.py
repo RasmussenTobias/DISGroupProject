@@ -1,6 +1,8 @@
 from flask import Flask, request, render_template,redirect,url_for
 from connectionAuth import conn
 import psycopg2
+from jinja2 import pass_eval_context
+from markupsafe import Markup, escape
 cur = conn.cursor()
 app = Flask(__name__)
 
@@ -29,6 +31,11 @@ def updateOrReject():
 @app.route('/', methods=['GET'])
 def login():
     return render_template('login.html')
+ 
+@app.route("/register",methods=["GET"])
+def goToRegister():
+   return render_template('createUser.html')
+   
 
 @app.route('/welcome', methods=['POST'])
 def welcome():
@@ -42,7 +49,11 @@ def welcome():
     else:
        return redirect(url_for("createUser"))
     
-
+@app.template_filter('custom_split')
+@pass_eval_context
+def custom_split(eval_ctx, value, index):
+    parts = value.split('_')
+    return Markup.escape(parts[index]) if eval_ctx.autoescape else parts[index]
 #preview
     
 @app.route("/ligaPreview",methods=["POST"])
@@ -78,7 +89,6 @@ def showMatchStats():
    stats = cur.fetchone()
    #return print(test)
    return render_template("singleMatch.html",match_stats = stats) 
-
 
 
 if __name__ == '__main__':

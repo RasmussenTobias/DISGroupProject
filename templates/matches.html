@@ -2,18 +2,25 @@
 <html>
   <head>
     <title>{{ liga }}</title>
+    <link rel="stylesheet" href="/static/matchesStyle.css">
   </head>
   <body>
     <h1>Matches for season {{ season }}</h1>
 
     <form action="/matchStats" method="post">
-      <ul>
+      <ul class="match-list">
         {% for row in rows %}
-        <li>
-          {{ row[0] }} - {{ row[1] }} - {{ row[2] }}<button
-            name="click"
-            value="{{row[0]+row[1]}}"
-          >
+        <li class="match-item">
+          <span class="match-info">
+            <h4>{{ row[0] }}</h4>
+            <div class="split-info">
+              <h3>{{ row[1] | custom_split(0) }}</h3>
+              <h4>vs</h4>
+              <h3>{{ row[1] | custom_split(1) }}</h3>
+            </div>
+            <h5>Arbitrage multiplier:{{ row[2] }}</h5>
+          </span>
+          <button class="stats-button" name="click" value="{{ row[0] + row[1] }}">
             Click to see stats
           </button>
         </li>
@@ -22,3 +29,4 @@
     </form>
   </body>
 </html>
+

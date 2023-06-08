@@ -228,7 +228,7 @@ output_df.to_csv(output_file, index=False)
 
 print("CSV extraction and transformation completed.")
 '''
-
+'''
 df = pd.read_csv("odds.csv")
 
 df = df.rename(columns={"HomeTeam": "playingTeams", "AwayTeam": "Bookmaker", "Bookmaker": "Home", "Home": "Draw", "Draw": "Away", "Away": "dump"})
@@ -256,11 +256,11 @@ for root, dirs, files in os.walk(parent_directory):
             print("going in")
             df = pd.read_csv(file_path,delimiter=",",encoding="latin-1")            
             for count,x in enumerate(df["HomeTeam"]):
-                if df["Date"][count]:
+                if "Date" in df.columns and df["Date"][count]:
                     datePlayed.append(df["Date"][count])
                 else: 
                     datePlayed.append("None")
-                if df["HomeTeam"][count]:
+                if "HomeTeam" in df.columns and  df["HomeTeam"][count]:
                     playingTeams.append(str(df["HomeTeam"][count])+"_"+str(df["AwayTeam"][count]))
                 else: 
                     playingTeams.append("None")
@@ -355,3 +355,4 @@ for root, dirs, files in os.walk(parent_directory):
         
 
 pd.DataFrame(zip(datePlayed, playingTeams,fthg,ftag,attendance,refferee,homeshots,awayshots,hshotsontarget,ashotsontarget,hhitwoodwork,ahitwoodwork,hcorners,acorners,hfouls,afouls,hfreekicks,afreekicks,hoffsides,aoffsides,hyellow,ayellow,hred,ared),columns=["datePlayed", "playingTeams","fthg","ftag","attendance","refferee","homeshots","awayshots","hshotsontarget","ashotsontarget","hhitwoodwork","ahitwoodwork","hcorners","acorners","hfouls","afouls","hfreekicks","afreekicks","hoffsides","aoffsides","hyellow","ayellow","hred","ared"]).to_csv("gameStats.csv")
+'''

@@ -58,7 +58,7 @@ create table bookmakers(
     bookmaker varchar(20)
 );
 
-create table odds(
+create table odds(    
     bookmaker varchar(20),
     date varchar(10),
     playingTeams varchar(100),
@@ -67,7 +67,10 @@ create table odds(
     away float(10)
 );
 
+copy odds from 'C:/Users/rasmu/OneDrive - University of Copenhagen/Uni/DIS/DISGroupProject/data/preprocessing/odds_formatted.csv' delimiter ',' csv header;
+
 create table matchstats(
+    id varchar(30),
     datePlayed varchar(50),
     playingTeams varchar(50),
     fthg varchar(50),
@@ -94,8 +97,8 @@ create table matchstats(
     ared varchar(50),
     primary key(datePlayed,playingTeams)
 );
-
-copy matchstats (datePlayed, playingTeams,fthg,ftag,attendance,refferee,homeshots,awayshots,hshotsontarget,ashotsontarget,hhitwoodwork,ahitwoodwork,hcorners,acorners,hfouls,afouls,hfreekicks,afreekicks,hoffsides,aoffsides,hyellow,ayellow,hred,ared) from 'C:/Users/rasmu/OneDrive - University of Copenhagen/Uni/DIS/DISGroupProject/processedData/gameStats.csv' delimiter ',' csv header;
+copy matchstats from 'C:/Users/rasmu/OneDrive - University of Copenhagen/Uni/DIS/DISGroupProject/processedData/gameStats.csv' delimiter ',' csv header;
+alter table matchstats drop column id;
 
 insert into bookmakers (bookmaker) values('bet365'),
                                     ('Blue_square'),
@@ -111,5 +114,4 @@ insert into bookmakers (bookmaker) values('bet365'),
                                     ('VC'),
                                     ('WilliamHill');
 
-copy odds from 'C:/Users/rasmu/OneDrive - University of Copenhagen/Uni/DIS/DISGroupProject/data/preprocessing/odds.csv' delimiter ',' csv header;
 

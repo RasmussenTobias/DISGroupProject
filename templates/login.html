@@ -2,14 +2,19 @@
 <html>
   <head>
     <title>Login</title>
+    <link rel="stylesheet" href="/static/loginStyle.css">
   </head>
   <body>
-    <form method="POST" action="/welcome">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" /><br /><br />
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" /><br /><br />
-      <input type="submit" value="Submit" />
-    </form>
+    <div class="container">
+      <form method="POST" action="/welcome" class="login-form">
+        <h1>Login</h1>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" /><br /><br />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" /><br /><br />
+        <input type="submit" value="Submit" class="submit-button" />
+        <p class="register-link">Don't have an account? <a href="/register">Register</a></p>
+      </form>
+    </div>
   </body>
 </html>

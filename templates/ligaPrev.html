@@ -2,20 +2,23 @@
 <html>
   <head>
     <title>Button Example</title>
+    <link rel="stylesheet" href="/static/ligaPrevStyle.css">
   </head>
   <body>
     <h1>Button Example</h1>
 
-    <form action="/ligaPreview" method="post">
-      <button type="submit" name="button" value="Premier League">
-        Premier League
-      </button>
-      <button type="submit" name="button" value="Championship">
-        Championship
-      </button>
-      <button type="submit" name="button" value="League 1">League 1</button>
-      <button type="submit" name="button" value="League 2">League 2</button>
-      <button type="submit" name="button" value="Conference">Conference</button>
-    </form>
+    <div class="button-container">
+      <form action="/ligaPreview" method="post" class="button-menu">
+        <button type="submit" name="button" value="Premier League">
+          Premier League
+        </button>
+        <button type="submit" name="button" value="Championship">
+          Championship
+        </button>
+        <button type="submit" name="button" value="League 1">League 1</button>
+        <button type="submit" name="button" value="League 2">League 2</button>
+        <button type="submit" name="button" value="Conference">Conference</button>
+      </form>
+    </div>
   </body>
 </html>
