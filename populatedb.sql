@@ -4,6 +4,8 @@ drop table if exists teams;
 drop table if exists teamsInLiga;
 drop table if exists season;
 drop table if exists matches;
+drop table if exists bookmakers;
+drop table if exists odds;
 
 create table users(
     username varchar(20),
@@ -21,7 +23,7 @@ create table teams(
     teamName varchar(50)
 );
 
-COPY teams FROM 'C:\Users\rasmu\OneDrive - University of Copenhagen\Uni\DIS\DISGroupProject\processedData\uniqTeams.csv' DELIMITER ',' CSV HEADER;
+COPY teams FROM '/Users/samuelcadell/Desktop/DISGroupProject-main/processedData/uniqTeams.csv' DELIMITER ',' CSV HEADER;
 alter table teams drop column id;
 
 insert into liga (ligaName) values('Premier League'),
@@ -30,55 +32,53 @@ insert into liga (ligaName) values('Premier League'),
                             ('League 2'),
                             ('Conference');
 
-create table teamsInLiga(
-    teamName varchar(50),
-    ligaName varchar(50),
-    primary key(teamName,ligaName)
-);
 
 create table season(
     id varchar(30),
     year varchar(10),
-    datePlayed DATE,
+    datePlayed varchar(10),
     playingTeams varchar(100),
     ligaName varchar(50),
     primary key (datePlayed,playingTeams,ligaName)
 );
 
 create table matches(
-    datePlayed DATE,
+    datePlayed varchar(10),
     playingTeams varchar(100)
 );
 
-create table matchStats(
-    datePlayed DATE,
-    playingTeams varchar(50),
-    fthg varchar(50),
-    ftag varchar(50),
-    attendance varchar(50),
-    refferee varchar(50),
-    homeshots varchar(50),
-    awayshot varchar(50),
-    hshotsontarget varchar(50),
-    ashotsontarget varchar(50),
-    hhitwoodwork varchar(50),
-    ahitwoodwork varchar(50),
-    hcorners varchar(50),
-    acorners varchar(50),
-    hfouls varchar(50),
-    afouls varchar(50),
-    hfreekicks varchar(50),
-    afreekicks varchar(50),
-    hoffsides varchar(50),
-    aoffsides varchar(50),
-    hyellow varchar(50),
-    ayellow varchar(50),
-    hred varchar(50),
-    ared varchar(50),
-    hblockingpoints varchar(50),
-    ablockingpoints varchar(50),
-    primary key(datePlayed,playingTeams)
+
+copy season from '/Users/samuelcadell/Desktop/DISGroupProject-main/processedData/seasonsGames.csv' delimiter ',' csv header;
+alter table season drop column id;
+
+copy matches from '/Users/samuelcadell/Desktop/DISGroupProject-main/processedData/matches.csv' delimiter ',' csv header;
+
+create table bookmakers(
+    bookmaker varchar(20)
 );
 
-copy season from 'C:\Users\rasmu\OneDrive - University of Copenhagen\Uni\DIS\DISGroupProject\processedData\seasonsGames.csv' delimiter ',' csv header;
-alter table season drop column id;
+create table odds(
+    bookmaker varchar(20),
+    date varchar(10),
+    playingTeams varchar(100),
+    home float(10), 
+    draw float(10),
+    away float(10)
+);
+
+insert into bookmakers (bookmaker) values('bet365'),
+                                    ('Blue_square'),
+                                    ('BetAndWin'),
+                                    ('GameBookers'),
+                                    ('Interwetten'),
+                                    ('Ladbrokes'),
+                                    ('Pinnacle'),
+                                    ('SportingOdds'),
+                                    ('SportingBet'),
+                                    ('StanJames'),
+                                    ('StanleyBet'),
+                                    ('VC'),
+                                    ('WilliamHill');
+
+copy odds from '/Users/samuelcadell/Desktop/DISGroupProject-main/data/preprocessing/odds_formatted.csv' delimiter ',' csv header;
+
