@@ -55,6 +55,14 @@ def showMatches():
    
    return render_template("seasons.html",num_buttons=len(seasonsForLiga),button_desc=description,liga=liga)
 
+@app.route("/matchStats",methods=["GET"])
+def showMatchStats():
+   key = request.form["button"]
+   curr.execute("select * from matchStats where datePlayed AND playingTeams =%s",(key.split("*")[0],key.split("*")[1]))
+   stats = cur.fetchone()
+   #return print(test)
+   return render_template("singleMatch.html",match_stats = stats)
+
 if __name__ == '__main__':
     app.debug = True
     app.run()

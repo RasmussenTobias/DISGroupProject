@@ -64,8 +64,7 @@ for root, dirs, files in os.walk(parent_directory):
                 if "FTAG" in df.columns and  df["FTAG"][count]:                
                     ftag.append(df["FTAG"][count])
                 else: 
-                    ftag.append("None")
-                
+                    ftag.append("None")                
                 if "Attendance" in df.columns and df["Attendance"][count]:
                     attendance.append(df["Attendance"][count])
                 else: 
@@ -86,15 +85,15 @@ for root, dirs, files in os.walk(parent_directory):
                     hsotontharget.append(df["HST"][count])
                 else: 
                     hsotontharget.append("None")
-                if "HST" in df.columns and df["AST"][count]:
+                if "AST" in df.columns and df["AST"][count]:
                     ashotontarget.append(df["AST"][count])
                 else: 
                     ashotontarget.append("None")
-                if "Attendance" in df.columns and df["HHW"][count]:
+                if "HHW" in df.columns and df["HHW"][count]:
                     hhitwoodwork.append(df["HHW"][count])
                 else: 
                     hhitwoodwork.append("None")
-                if "Attendance" in df.columns and df["AHW"][count]:
+                if "AHW" in df.columns and df["AHW"][count]:
                     ahitwoodwork.append(df["AHW"][count])
                 else: 
                     ahitwoodwork.append("None")
@@ -144,7 +143,7 @@ for root, dirs, files in os.walk(parent_directory):
                     hred.append("None")
                 if "AR" in df.columns and df["AR"][count]:
                     ared.append(df["AR"][count]) 
-                else: 
+                else:
                     ared.append("None")   
         
 

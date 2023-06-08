@@ -5,19 +5,18 @@
 </head>
 <body>
   <h1>Historical Soccer Match</h1>
-
+  <form action="/matchStats" method="get">
   <div class="match-info">
     <div class="team-container">
-      <h1>Barcelona</h1>
+      <h1>{{match_stats[1] | split('_')[0]}}</h1>
       <h2>vs</h2>
-      <h1>Real Madrid</h1>
+      <h1>{{match_stats[1] | split('_')[1]}}</h1>
     </div>
     <div class="score-container">
-      <p class="score">3 - 2</p>
+      <p class="score"><strong>{{match_stats[2]}} - {{match_stats[3]}}</strong></p>
       <div class="other-stats">       
-        <p><strong>Attendance:</strong> 80,000</p>
-        <p><strong>Referee:</strong> John Smith</p>
-        <!-- Other statistics here -->
+        <p><strong>Attendance:</strong> {{match_stats[4]}}</p>
+        <p><strong>Referee:</strong> {{match_stats[5]}}</p>        
       </div>
     </div>
   </div>
@@ -26,16 +25,15 @@
 
   <div class="match-stats">
     <div class="column">
-      <p><span class="home-team">Barcelona</span> Team Shots <span class="away-team">Real Madrid</span></p>
-      <p><span class="home-team">Barcelona</span> Shots on Target <span class="away-team">Real Madrid</span></p>
-      <p><span class="home-team">Barcelona</span> Hit Woodwork <span class="away-team">Real Madrid</span></p>
-      <p><span class="home-team">Barcelona</span> Corners <span class="away-team">Real Madrid</span></p>
-      <p><span class="home-team">Barcelona</span> Fouls Committed <span class="away-team">Real Madrid</span></p>
-      <p><span class="home-team">Barcelona</span> Free Kicks Conceded <span class="away-team">Real Madrid</span></p>
-      <p><span class="home-team">Barcelona</span> Offsides <span class="away-team">Real Madrid</span></p>
-      <p><span class="home-team">Barcelona</span> Yellow Cards <span class="away-team">Real Madrid</span></p>
-      <p><span class="home-team">Barcelona</span> Red Cards <span class="away-team">Real Madrid</span></p>
-      <p><span class="home-team">Barcelona</span> Bookings Points <span class="away-team">Real Madrid</span></p>
+      <p><span class="home-team">{{match_stats[6]}}</span> Team Shots <span class="away-team">{match_stats[7]}</span></p>
+      <p><span class="home-team">{{match_stats[8]}}</span> Shots on Target <span class="away-team">{{match_stats[9]}}</span></p>
+      <p><span class="home-team">{{match_stats[10]}}</span> Hit Woodwork <span class="away-team">{{match_stats[11]}}</span></p>
+      <p><span class="home-team">{{match_stats[12]}}</span> Corners <span class="away-team">{{match_stats[13]}}</span></p>
+      <p><span class="home-team">{{match_stats[14]}}</span> Fouls Committed <span class="away-team">{{match_stats[15]}}</span></p>
+      <p><span class="home-team">{{match_stats[16]}}</span> Free Kicks Conceded <span class="away-team">{{match_stats[17]}}</span></p>
+      <p><span class="home-team">{{match_stats[18]}}</span> Offsides <span class="away-team">{{match_stats[19]}}</span></p>
+      <p><span class="home-team">{{match_stats[20]}}</span> Yellow Cards <span class="away-team">{{match_stats[21]}}</span></p>
+      <p><span class="home-team">{{match_stats[22]}}</span> Red Cards <span class="away-team">{{match_stats[23]}}</span></p>
     </div>
   </div>
 </body>
