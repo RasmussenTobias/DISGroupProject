@@ -98,6 +98,7 @@ def showMatchStats():
         row = rows[index]
         played_date = row[0]
         playing_teams = row[1]
+        print(row)
         cur.execute("SELECT * FROM matchStats WHERE datePlayed = %s AND playingTeams = %s", (played_date, playing_teams))
         match_stats = cur.fetchone()
         print(match_stats)
