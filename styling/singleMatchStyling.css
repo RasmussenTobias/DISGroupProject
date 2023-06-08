@@ -1,0 +1,109 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f1f1f1;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 28px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  margin-top: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+h3 {
+  margin-top: 10px;
+  color: #333;
+  font-size: 20px;
+}
+
+.match-info p {
+  margin: 5px 0;
+  color: #555;
+  font-size: 18px;
+}
+
+.match-stats p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.match-stats strong {
+  margin-right: 5px;
+  color: #333;
+}
+
+.match-info {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.match-stats {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.column {
+  margin: 0 10px;
+}
+
+.column p {
+  margin: 5px 0;
+  color: #555;
+  text-align: center;
+}
+
+.team-container {
+  display: flex;
+  justify-content:center;
+  gap: 70px;
+}
+
+.score-container {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.score-container .score {
+  font-size: 26px; /* Adjust the font size for the score */
+}
+
+.section-heading {
+  text-align: center;
+  margin-top: 30px;
+  color: #333;
+  font-size: 24px;
+}
+
+.home-team {
+  float: left;
+  margin-right: 0px; /* Adjust the horizontal gap for home team */
+}
+
+.away-team {
+  float: right;
+  margin-left: 10px; /* Adjust the horizontal gap for away team */
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.column {
+  margin: 0 650px; /* Adjust the horizontal gap between stats */
+}

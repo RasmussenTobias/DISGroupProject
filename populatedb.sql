@@ -21,7 +21,7 @@ create table teams(
     teamName varchar(50)
 );
 
-COPY teams FROM '/Users/samuelcadell/Desktop/DISGroupProject-main/processedData/uniqTeams.csv' DELIMITER ',' CSV HEADER;
+COPY teams FROM 'C:\Users\rasmu\OneDrive - University of Copenhagen\Uni\DIS\DISGroupProject\processedData\uniqTeams.csv' DELIMITER ',' CSV HEADER;
 alter table teams drop column id;
 
 insert into liga (ligaName) values('Premier League'),
@@ -50,6 +50,35 @@ create table matches(
     playingTeams varchar(100)
 );
 
+create table matchStats(
+    datePlayed DATE,
+    playingTeams varchar(50),
+    fthg varchar(50),
+    ftag varchar(50),
+    attendance varchar(50),
+    refferee varchar(50),
+    homeshots varchar(50),
+    awayshot varchar(50),
+    hshotsontarget varchar(50),
+    ashotsontarget varchar(50),
+    hhitwoodwork varchar(50),
+    ahitwoodwork varchar(50),
+    hcorners varchar(50),
+    acorners varchar(50),
+    hfouls varchar(50),
+    afouls varchar(50),
+    hfreekicks varchar(50),
+    afreekicks varchar(50),
+    hoffsides varchar(50),
+    aoffsides varchar(50),
+    hyellow varchar(50),
+    ayellow varchar(50),
+    hred varchar(50),
+    ared varchar(50),
+    hblockingpoints varchar(50),
+    ablockingpoints varchar(50),
+    primary key(datePlayed,playingTeams)
+);
 
-copy season from '/Users/samuelcadell/Desktop/DISGroupProject-main/processedData/seasonsGames.csv' delimiter ',' csv header;
+copy season from 'C:\Users\rasmu\OneDrive - University of Copenhagen\Uni\DIS\DISGroupProject\processedData\seasonsGames.csv' delimiter ',' csv header;
 alter table season drop column id;
