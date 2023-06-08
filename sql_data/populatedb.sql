@@ -6,7 +6,7 @@ drop table if exists season;
 drop table if exists matches;
 drop table if exists bookmakers;
 drop table if exists odds;
-drop table if exists matchStats;
+drop table if exists matchstats;
 
 create table users(
     username varchar(20),
@@ -67,15 +67,15 @@ create table odds(
     away float(10)
 );
 
-create table matchStats(
-    datePlayed DATE,
+create table matchstats(
+    datePlayed varchar(50),
     playingTeams varchar(50),
     fthg varchar(50),
     ftag varchar(50),
     attendance varchar(50),
     refferee varchar(50),
     homeshots varchar(50),
-    awayshot varchar(50),
+    awayshots varchar(50),
     hshotsontarget varchar(50),
     ashotsontarget varchar(50),
     hhitwoodwork varchar(50),
@@ -92,12 +92,10 @@ create table matchStats(
     ayellow varchar(50),
     hred varchar(50),
     ared varchar(50),
-    hblockingpoints varchar(50),
-    ablockingpoints varchar(50),
     primary key(datePlayed,playingTeams)
 );
 
-copy matchStats from 'C:/Users/rasmu/OneDrive - University of Copenhagen/Uni/DIS/DISGroupProject/processedData/gameStats.csv' delimiter ',' csv header;
+copy matchstats (datePlayed, playingTeams,fthg,ftag,attendance,refferee,homeshots,awayshots,hshotsontarget,ashotsontarget,hhitwoodwork,ahitwoodwork,hcorners,acorners,hfouls,afouls,hfreekicks,afreekicks,hoffsides,aoffsides,hyellow,ayellow,hred,ared) from 'C:/Users/rasmu/OneDrive - University of Copenhagen/Uni/DIS/DISGroupProject/processedData/gameStats.csv' delimiter ',' csv header;
 
 insert into bookmakers (bookmaker) values('bet365'),
                                     ('Blue_square'),
@@ -113,5 +111,5 @@ insert into bookmakers (bookmaker) values('bet365'),
                                     ('VC'),
                                     ('WilliamHill');
 
-copy odds from 'C:/Users/rasmu/OneDrive - University of Copenhagen/Uni/DIS/DISGroupProject/processedData/odds.csv' delimiter ',' csv header;
+copy odds from 'C:/Users/rasmu/OneDrive - University of Copenhagen/Uni/DIS/DISGroupProject/data/preprocessing/odds.csv' delimiter ',' csv header;
 

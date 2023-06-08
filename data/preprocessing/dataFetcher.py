@@ -247,7 +247,7 @@ df.to_csv("odds_formatted.csv", index=False)
 
 print(df)
 
-datePlayed, playingTeams,fthg,ftag,attendance,refferee,homeshots,awayshots,hsotontharget,ashotontarget,hhitwoodwork,ahitwoodwork,hcorners,acorners,hfouls,afouls,hfreekicks,afreekicks,hoffsides,aoffsides,hyellow,ayellow,hred,ared = [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]
+datePlayed, playingTeams,fthg,ftag,attendance,refferee,homeshots,awayshots,hshotsontarget,ashotsontarget,hhitwoodwork,ahitwoodwork,hcorners,acorners,hfouls,afouls,hfreekicks,afreekicks,hoffsides,aoffsides,hyellow,ayellow,hred,ared = [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]
 for root, dirs, files in os.walk(parent_directory):
     for file in files:
         file_path = os.path.join(root,file)
@@ -289,13 +289,13 @@ for root, dirs, files in os.walk(parent_directory):
                 else: 
                     awayshots.append("None")
                 if "HST" in df.columns and df["HST"][count]:
-                    hsotontharget.append(df["HST"][count])
+                    hshotsontarget.append(df["HST"][count])
                 else: 
-                    hsotontharget.append("None")
+                    hshotsontarget.append("None")
                 if "AST" in df.columns and df["AST"][count]:
-                    ashotontarget.append(df["AST"][count])
+                    ashotsontarget.append(df["AST"][count])
                 else: 
-                    ashotontarget.append("None")
+                    ashotsontarget.append("None")
                 if "HHW" in df.columns and df["HHW"][count]:
                     hhitwoodwork.append(df["HHW"][count])
                 else: 
@@ -354,4 +354,4 @@ for root, dirs, files in os.walk(parent_directory):
                     ared.append("None")   
         
 
-pd.DataFrame(zip(datePlayed, playingTeams,fthg,ftag,attendance,refferee,homeshots,awayshots,hsotontharget,ashotontarget,hhitwoodwork,ahitwoodwork,hcorners,acorners,hfouls,afouls,hfreekicks,afreekicks,hoffsides,aoffsides,hyellow,ayellow,hred,ared),columns=["datePlayed", "playingTeams","fthg","ftag","attendance","refferee","homeshots","awayshots","hsotontharget","ashotontarget","hhitwoodwork","ahitwoodwork","hcorners","acorners","hfouls","afouls","hfreekicks","afreekicks","hoffsides","aoffsides","hyellow","ayellow","hred","ared"]).to_csv("gameStats.csv")
+pd.DataFrame(zip(datePlayed, playingTeams,fthg,ftag,attendance,refferee,homeshots,awayshots,hshotsontarget,ashotsontarget,hhitwoodwork,ahitwoodwork,hcorners,acorners,hfouls,afouls,hfreekicks,afreekicks,hoffsides,aoffsides,hyellow,ayellow,hred,ared),columns=["datePlayed", "playingTeams","fthg","ftag","attendance","refferee","homeshots","awayshots","hshotsontarget","ashotsontarget","hhitwoodwork","ahitwoodwork","hcorners","acorners","hfouls","afouls","hfreekicks","afreekicks","hoffsides","aoffsides","hyellow","ayellow","hred","ared"]).to_csv("gameStats.csv")
