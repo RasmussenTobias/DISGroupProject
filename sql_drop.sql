@@ -1,0 +1,9 @@
+drop table if exists users;
+drop table if exists liga;
+drop table if exists teams;
+drop table if exists teamsInLiga;
+drop table if exists season;
+drop table if exists matches;
+drop table if exists bookmakers;
+drop table if exists odds;
+drop table if exists matchstats;

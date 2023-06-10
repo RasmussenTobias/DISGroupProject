@@ -97,8 +97,7 @@ def showMatchStats():
     played_date = request.args.get('playedDate')
     playing_teams = request.args.get('playingTeams')
     cur.execute("SELECT * FROM matchStats WHERE datePlayed = %s AND playingTeams = %s", (played_date, playing_teams))
-    match_stats = cur.fetchone()
-    print(match_stats)
+    match_stats = cur.fetchone()    
     return render_template("singleMatch.html", match_stats=match_stats)
 
 
