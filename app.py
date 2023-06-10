@@ -23,8 +23,7 @@ def updateOrReject():
    
    cur.execute("select * from users where username=%s",(username,))
    res = cur.fetchone()
-   if res:
-      #render_template("alert.html",alert_message="Username already exists, be more creative!",redirect_url="/createUser")
+   if res:      
       return render_template("alert.html",alert_message="Username already exists, be more creative!",redirect_url="/createUser")
    else:
       cur.execute("insert into users values(%s,%s)",(username,password))
@@ -67,7 +66,7 @@ def custom_split(eval_ctx, value, index):
 @app.route("/ligaPreview",methods=["POST"])
 def showMatches():
    liga = request.form['button']
-   cur.execute("select distinct(year) from season where ligaName=%s",(liga,))
+   cur.execute("SELECT DISTINCT year FROM season WHERE ligaName = %s ORDER BY year DESC",(liga,))
    seasonsForLiga = cur.fetchall()
    description = [f"Season 20{x}" for x in seasonsForLiga]
    description = [x.replace("('","").replace("',)","") for x in description]
