@@ -246,7 +246,7 @@ df = df[columnOrder]
 df.to_csv("odds_formatted.csv", index=False)
 
 print(df)
-
+'''
 datePlayed, playingTeams,fthg,ftag,attendance,refferee,homeshots,awayshots,hshotsontarget,ashotsontarget,hhitwoodwork,ahitwoodwork,hcorners,acorners,hfouls,afouls,hfreekicks,afreekicks,hoffsides,aoffsides,hyellow,ayellow,hred,ared = [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]
 for root, dirs, files in os.walk(parent_directory):
     for file in files:
@@ -275,9 +275,9 @@ for root, dirs, files in os.walk(parent_directory):
                 if "Attendance" in df.columns and df["Attendance"][count]:
                     attendance.append(df["Attendance"][count])
                 else: 
-                    attendance.append("None")
-                if "Refferee" in df.columns and df["Refferee"][count]:
-                    refferee.append(df["Refferee"][count])
+                    attendance.append("Not recorded")
+                if "Referee" in df.columns and df["Referee"][count]:
+                    refferee.append(df["Referee"][count])
                 else: 
                     refferee.append("None")
                 if "HS" in df.columns and df["HS"][count]:
@@ -355,4 +355,3 @@ for root, dirs, files in os.walk(parent_directory):
         
 
 pd.DataFrame(zip(datePlayed, playingTeams,fthg,ftag,attendance,refferee,homeshots,awayshots,hshotsontarget,ashotsontarget,hhitwoodwork,ahitwoodwork,hcorners,acorners,hfouls,afouls,hfreekicks,afreekicks,hoffsides,aoffsides,hyellow,ayellow,hred,ared),columns=["datePlayed", "playingTeams","fthg","ftag","attendance","refferee","homeshots","awayshots","hshotsontarget","ashotsontarget","hhitwoodwork","ahitwoodwork","hcorners","acorners","hfouls","afouls","hfreekicks","afreekicks","hoffsides","aoffsides","hyellow","ayellow","hred","ared"]).to_csv("gameStats.csv")
-'''

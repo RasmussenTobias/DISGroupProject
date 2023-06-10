@@ -3,12 +3,11 @@ from connectionAuth import conn
 import psycopg2
 from jinja2 import pass_eval_context
 from markupsafe import Markup, escape
-from flask import session
+from flask import request
 import secrets
 cur = conn.cursor()
 app = Flask(__name__)
-secret_key = secrets.token_hex(16)
-app.secret_key = secret_key
+
 
 liga = None
 
@@ -61,7 +60,8 @@ def custom_split(eval_ctx, value, index):
     if index < len(parts):
         return Markup.escape(parts[index]) if eval_ctx.autoescape else parts[index]
     else:
-        return ""
+        return ""    
+
 #preview
     
 @app.route("/ligaPreview",methods=["POST"])
@@ -84,25 +84,24 @@ def matches():
         SELECT date, playingTeams, (1 / h + 1 / d + 1 / a) * 100 - 100 AS arb FROM tb1
     ''')
     res = cur.fetchall()
-
-    session['rows'] = res  # Store rows in the session
+    global rows
+    rows = res  # Store rows in the global variable
 
     return render_template("matches.html", rows=res, totalMatches=len(res), liga=liga)
+
                           
 
-@app.route("/matchStats", methods=["POST"])
+
+@app.route("/matchStats", methods=["GET"])
 def showMatchStats():
-    index = int(request.form.get("click"))
-    rows = session.get('rows')  # Retrieve rows from the session
-    if rows and 0 <= index < len(rows):
-        row = rows[index]
-        played_date = row[0]
-        playing_teams = row[1]
-        print(row)
-        cur.execute("SELECT * FROM matchStats WHERE datePlayed = %s AND playingTeams = %s", (played_date, playing_teams))
-        match_stats = cur.fetchone()
-        print(match_stats)
+    played_date = request.args.get('playedDate')
+    playing_teams = request.args.get('playingTeams')
+    cur.execute("SELECT * FROM matchStats WHERE datePlayed = %s AND playingTeams = %s", (played_date, playing_teams))
+    match_stats = cur.fetchone()
+    print(match_stats)
     return render_template("singleMatch.html", match_stats=match_stats)
+
+
    
 
 if __name__ == '__main__':

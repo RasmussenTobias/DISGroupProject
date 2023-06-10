@@ -113,5 +113,3 @@ insert into bookmakers (bookmaker) values('bet365'),
                                     ('StanleyBet'),
                                     ('VC'),
                                     ('WilliamHill');
-
-

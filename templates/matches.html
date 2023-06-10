@@ -6,11 +6,10 @@
   </head>
   <body>
     <h1>Matches for season {{ season }}</h1>
-
-    <form action="/matchStats" method="post">
-      <ul class="match-list">
-        {% set index = 0 %}
-        {% for row in rows %}
+    <ul class="match-list">
+      {% set start_index = 0 %}
+      {% for row in rows %}
+        {% set index = loop.index + start_index - 1 %}
         <li class="match-item">
           <span class="match-info">
             <h4>{{ row[0] }}</h4>
@@ -21,15 +20,12 @@
             </div>
             <h5>Arbitrage multiplier:{{ row[2] }}</h5>
           </span>
-          <input type="hidden" name="playedDate" value="{{ row[0] }}">
-          <input type="hidden" name="playingTeams" value="{{ row[1] }}">
-          <button class="stats-button" name="click" value="{{ index }}">
+          <a href="/matchStats?playedDate={{ row[0] }}&playingTeams={{ row[1] }}" class="stats-button">
             Click to see stats
-          </button>
+          </a>
         </li>
-        {% set index = index + 1 %}
-        {% endfor %}
-      </ul>
-    </form>
+      {% endfor %}
+    </ul>
+    
   </body>
 </html>
