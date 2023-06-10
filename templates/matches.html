@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ liga }}</title>
+    <title>{{ league }}</title>
     <link rel="stylesheet" href="/static/matchesStyle.css">
   </head>
-  <body>
-    <h1>Matches for season {{ season }}</h1>
+  <body>    
+    <h1>Matches for season {{ league }}</h1>
     <ul class="match-list">
       {% set start_index = 0 %}
       {% for row in rows %}
