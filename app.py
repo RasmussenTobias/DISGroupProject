@@ -75,6 +75,9 @@ def showMatches():
 
 @app.route("/matches", methods=["POST"])
 def matches():
+    league = request.form.get("liga")  # Assuming the league value is obtained from the previous page
+    season = request.form.get("button")  # Retrieve the selected season from the button value
+    print(f"Liga = {league}, season = {season}")
     cur.execute('''
         WITH tb1 AS (
             SELECT date, playingTeams, MAX(home) AS h, MAX(draw) AS d, MAX(away) AS a

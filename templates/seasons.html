@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{liga}}</title>
+    <title>{{ liga }}</title>
     <link rel="stylesheet" href="/static/seasonsStyle.css">
   </head>
   <body>
     <h1>Seasons</h1>
 
     <form action="/matches" method="post" class="button-menu">
+      <input type="hidden" name="liga" value="{{ liga }}"> 
       {% for i in range(num_buttons) %}
-      <button name="button" type="submit" value="{{button_desc[i]}}">
-        {{button_desc[i]}}
-      </button>
+        <button name="button" type="submit" value="{{ button_desc[i] }}">
+          {{ button_desc[i] }}
+        </button>
       {% endfor %}
     </form>
   </body>
