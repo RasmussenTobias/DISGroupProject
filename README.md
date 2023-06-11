@@ -13,6 +13,6 @@ $ python run.py
 ## Interact with the webpage:
 When opening the application, either try to login or create a new user - either way it will redirect to create a new user if the user does not 
 exist in the database. 
-Open the user list to delete and update current users.
+Open the user list at the login page to delete and update current users.
 When successfully logged in you can proceed through leagues, seasons and matches where arbitrage information as well as match stats for each game is available. 
 Use the ← and → arrows at the top left of your browser to go back and forth.
