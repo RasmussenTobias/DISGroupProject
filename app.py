@@ -43,13 +43,56 @@ def goToRegister():
 def welcome():
     username = request.form['username']
     password = request.form['password']
-    
-    cur.execute("select * from users where username=%s and password=%s",(username,password))
+
+    if 'see-users' in request.form:  # Check if the "See available users" button was clicked
+        cur.execute("SELECT username,password FROM users")
+        users = cur.fetchall()
+        user_list = [{'username': user[0], 'password': user[1]} for user in users]  # Fetch and format the user data
+
+        return render_template('users.html', users=user_list)
+
+    cur.execute("SELECT * FROM users WHERE username=%s AND password=%s", (username, password))
     loginResult = cur.fetchone()
+
     if loginResult:
-       return render_template("ligaPrev.html")
+        return render_template('ligaPrev.html')  # Render the ligaPrev.html template
     else:
-       return redirect(url_for("createUser"))
+        return redirect(url_for('createUser'))  # Redirect to the createUser route
+
+
+from flask import redirect, url_for
+
+@app.route('/delete', methods=['POST'])
+def delete_user():
+    username = request.form['username']
+    password = request.form['password']
+
+    cur.execute("DELETE FROM users WHERE username = %s AND password = %s", (username, password))
+    conn.commit()
+
+    return redirect(url_for('login'))
+
+
+
+# Flask endpoints
+@app.route('/edit', methods=['POST'])
+def edit_user():
+    username = request.form['username']
+    password = request.form['password']
+
+    return render_template('editUser.html', username=username, password=password)
+
+@app.route('/update/<string:old_username>', methods=['POST'])
+def update_user(old_username):
+    new_username = request.form['username']
+    new_password = request.form['password']
+    print(old_username,new_username,new_password)
+    cur.execute("UPDATE users SET username=%s, password=%s WHERE username=%s",
+                (new_username, new_password, old_username))
+    conn.commit()
+
+    return render_template('login.html')
+ 
  
 #Custom split function    
 @app.template_filter('custom_split')

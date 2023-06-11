@@ -1,0 +1,18 @@
+<!-- editUser.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit User</title>
+</head>
+<body>
+    <h1>Edit User</h1>
+    <!-- editUser.html -->
+    <form action="/update?old_username={{ username }}" method="POST">
+        <input type="hidden" name="old_username" value="{{ username }}">
+        <input type="text" name="new_username" value="{{ user.username }}">
+        <input type="text" name="new_password" value="{{ user.password }}">
+        <button type="submit">Update</button>
+    </form>
+
+</body>
+</html>

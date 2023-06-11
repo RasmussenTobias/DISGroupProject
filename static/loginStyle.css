@@ -49,7 +49,21 @@ body {
   cursor: pointer;
 }
 
-.login-form .submit-button:hover {
+.login-form .see-users-button {
+  width: 50%;
+  margin-top: 20px;
+  margin-left: auto; /* Added to align button to the right */
+  display: block; /* Added to make the button a block element */
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 3px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.login-form .see-users-button:hover {
   background-color: #45a049;
 }
 

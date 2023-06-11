@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+    <link rel="stylesheet" href="/static/usersStyle.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function enableEdit(rowId) {
+            var row = document.getElementById(rowId);
+            var usernameCell = row.querySelector('.username');
+            var passwordCell = row.querySelector('.password');
+            var editButton = row.querySelector('.edit-button');
+            var deleteButton = row.querySelector('.delete-button');
+            var cancelButton = row.querySelector('.cancel-button');
+            var updateButton = row.querySelector('.update-button');
+
+            usernameCell.innerHTML = '<input type="text" name="username" value="' + usernameCell.innerText + '">';
+            passwordCell.innerHTML = '<input type="text" name="password" value="' + passwordCell.innerText + '">';
+            editButton.classList.add('hidden');
+            deleteButton.classList.add('hidden');
+            cancelButton.classList.remove('hidden');
+            updateButton.classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+    <h1>User List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr id="row-{{ loop.index }}">
+                <td class="username">{{ user.username }}</td>
+                <td class="password">{{ user.password }}</td>
+                <td>
+                    <form action="{{ url_for('delete_user') }}" method="POST" style="display: inline;">
+                        <input type="hidden" name="username" value="{{ user.username }}">
+                        <input type="hidden" name="password" value="{{ user.password }}">
+                        <button type="button" class="edit-button" onclick="enableEdit('row-{{ loop.index }}')">Edit</button>
+                        <button type="submit" class="delete-button">Delete</button>
+                        <button type="button" class="cancel-button hidden" onclick="window.location.reload()">Cancel</button>
+                    </form>
+                    <form action="{{ url_for('update_user', old_username=user.username) }}" method="POST" style="display: inline;">
+                        <input type="hidden" name="username" value="{{ user.username }}">
+                        <input type="hidden" name="password" value="{{ user.password }}">
+                        <button type="submit" class="update-button hidden">Update</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
