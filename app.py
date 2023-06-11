@@ -81,8 +81,7 @@ def matches():
     cur.execute('''
         WITH tb1 AS (
             SELECT date, playingTeams, MAX(home) AS h, MAX(draw) AS d, MAX(away) AS a
-            FROM odds GROUP BY playingTeams, date LIMIT 100
-        )
+            FROM odds GROUP BY playingTeams, date LIMIT 1000) 
         SELECT date, playingTeams, (1 / h + 1 / d + 1 / a) * 100 - 100 AS arb FROM tb1
     ''')
     res = cur.fetchall()
