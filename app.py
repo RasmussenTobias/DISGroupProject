@@ -84,14 +84,14 @@ def edit_user():
 
 @app.route('/update/<string:old_username>', methods=['POST'])
 def update_user(old_username):
-    new_username = request.form['username']
-    new_password = request.form['password']
+    new_username = request.form['new_username']
+    new_password = request.form['new_password']
     print(old_username,new_username,new_password)
     cur.execute("UPDATE users SET username=%s, password=%s WHERE username=%s",
                 (new_username, new_password, old_username))
     conn.commit()
 
-    return render_template('login.html')
+    return redirect(url_for('login'))
  
  
 #Custom split function    

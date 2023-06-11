@@ -11,15 +11,13 @@
     <script>
         function enableEdit(rowId) {
             var row = document.getElementById(rowId);
-            var usernameCell = row.querySelector('.username');
-            var passwordCell = row.querySelector('.password');
             var editButton = row.querySelector('.edit-button');
             var deleteButton = row.querySelector('.delete-button');
             var cancelButton = row.querySelector('.cancel-button');
             var updateButton = row.querySelector('.update-button');
-
-            usernameCell.innerHTML = '<input type="text" name="username" value="' + usernameCell.innerText + '">';
-            passwordCell.innerHTML = '<input type="text" name="password" value="' + passwordCell.innerText + '">';
+        
+            row.classList.add('edit-mode'); // Add the "edit-mode" class to the row
+        
             editButton.classList.add('hidden');
             deleteButton.classList.add('hidden');
             cancelButton.classList.remove('hidden');
@@ -39,10 +37,10 @@
         </thead>
         <tbody>
             {% for user in users %}
-            <tr id="row-{{ loop.index }}">
+            <tr id="row-{{ loop.index }}" class="edit-mode">
                 <td class="username">{{ user.username }}</td>
                 <td class="password">{{ user.password }}</td>
-                <td>
+                <td class="action">
                     <form action="{{ url_for('delete_user') }}" method="POST" style="display: inline;">
                         <input type="hidden" name="username" value="{{ user.username }}">
                         <input type="hidden" name="password" value="{{ user.password }}">
@@ -51,8 +49,9 @@
                         <button type="button" class="cancel-button hidden" onclick="window.location.reload()">Cancel</button>
                     </form>
                     <form action="{{ url_for('update_user', old_username=user.username) }}" method="POST" style="display: inline;">
-                        <input type="hidden" name="username" value="{{ user.username }}">
-                        <input type="hidden" name="password" value="{{ user.password }}">
+                        <input type="hidden" name="old_username" value="{{ user.username }}">
+                        <input type="text" name="new_username" value="{{ user.username }}">
+                        <input type="text" name="new_password" value="{{ user.password }}">
                         <button type="submit" class="update-button hidden">Update</button>
                     </form>
                 </td>
